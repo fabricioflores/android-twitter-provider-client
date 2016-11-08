@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
+import com.example.fabricioflores.twitterproviderclient.adapters.TweetsAdapter;
 import com.example.fabricioflores.twitterproviderclient.models.Query;
 import com.example.fabricioflores.twitterproviderclient.models.Tweet;
 
@@ -21,6 +22,7 @@ public class TweetsActivity extends Activity {
     private ListView listView;
     private ArrayList<Tweet> contactos;
     private long queryId;
+    ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,9 @@ public class TweetsActivity extends Activity {
         queryId = bundle.getLong("query_id");
 
         contactos = cargarDatos();
-        Log.i("nada", contactos.size() + "");
+        list = (ListView) findViewById(R.id.artistList);
+        TweetsAdapter adaptador = new TweetsAdapter(getBaseContext(), contactos);
+        list.setAdapter(adaptador);
     }
 
     public ArrayList<Tweet> cargarDatos() {

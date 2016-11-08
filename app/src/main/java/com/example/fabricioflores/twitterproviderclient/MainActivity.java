@@ -1,23 +1,16 @@
 package com.example.fabricioflores.twitterproviderclient;
 
 import android.app.Activity;
-import android.app.DownloadManager;
-import android.app.ListActivity;
-import android.app.LoaderManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.CursorLoader;
 import android.content.Intent;
-import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 
 import com.example.fabricioflores.twitterproviderclient.models.Query;
 
