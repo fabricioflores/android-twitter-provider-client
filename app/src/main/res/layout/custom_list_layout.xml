@@ -11,12 +11,13 @@
         android:layout_width="match_parent"
         android:layout_weight="8"
         android:layout_height="120dp"
+        android:layout_marginLeft="10dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:textStyle="bold"
-            android:id="@+id/artistName"/>
+            android:id="@+id/userName"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"

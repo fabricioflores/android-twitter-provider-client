@@ -21,12 +21,10 @@ import com.example.fabricioflores.twitterproviderclient.R;
 
 public class TweetsAdapter extends ArrayAdapter<Tweet> {
     private final Context contexto;
-    private final ArrayList<Tweet> array_tweets;
 
     public TweetsAdapter(Context context, ArrayList<Tweet> array_tweets) {
         super(context, -1, array_tweets);
         this.contexto = context;
-        this.array_tweets = array_tweets;
     }
 
 
@@ -37,15 +35,12 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
 
         View layoutPersona = inflater.inflate(R.layout.custom_list_layout, parent, false);
 
-        // Referencias UI.
         ImageView image = (ImageView) layoutPersona.findViewById(R.id.imagePlaceholder);
-        TextView name = (TextView) layoutPersona.findViewById(R.id.artistName);
+        TextView name = (TextView) layoutPersona.findViewById(R.id.userName);
         TextView text = (TextView) layoutPersona.findViewById(R.id.textTweet);
 
-        // Lead actual.
         Tweet tweet = getItem(position);
 
-        // Setup.
         Picasso.with(contexto).load(tweet.getUserImage()).into(image);
         name.setText("@" + tweet.getUserName());
         text.setText(tweet.getText());
